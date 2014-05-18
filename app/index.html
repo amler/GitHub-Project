@@ -1,0 +1,102 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>gh alternative</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css -->
+
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css(.tmp) styles/main.css -->    
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="column1"></div>
+
+        <!--Scripts go here -->
+            <!-- Rendering left user info column -->
+            <script type="text/template" id="userInfo">
+                <div class="content">
+                    <div class="userinfo">
+                        <img class="useravatar" src="<%= avatar_url %>" />
+                        <div class="username borderbottom">
+                            <h1><%= name %></h1>
+                            <h2><%= login %></h2>
+                        </div>
+                        <div class="user-details borderbottom"> 
+                            <a class="email" href="mailto:<%= email %>"><%= email %></a>
+                            <p class="joined">Joined on <%= joined_date %></p>
+
+                        </div>
+                        <div class="user-stats borderbottom">
+                            <a href="https://github.com/<%= login %>/followers">
+                                <strong class="count"><%= followers %></strong><span>Followers</span>
+                            </a>
+                            <a href="https://github.com/stars">
+                                <strong class="count starred-count"></strong>
+                                <span>Starred</span
+                            </a>
+                            <a href="https://github.com/<%= login %>/following">
+                                <strong class="count"><%= following %></strong><span>Following</span>
+                            </a>
+                        </div>    
+                    </div>
+                    <!-- Placing content in this div-->
+                    <div class="repocontent"></div>
+                </div>
+            </script> 
+            
+            <script type="text/template" id="respository">
+                <div class="repo borderbottom">
+                    <img class="book-icon" src="../images/book-icon-big.png" />
+                    <div class="repo-info">
+                        <a><h3 class="repo-name"><%= name %></h3>
+                        <% if (description) { %>
+                            <p class="descriptions"><%= description %></p>
+                        <% } %>
+                        <p class="last-updated">Last updated <%= updated_at %></p>
+                    </div>
+                    <div class="repo-icons">
+                        <p class="language"><%=language%></p>
+                        <a class="stargazers-count" href="#"><%=stargazers_count%></a> 
+                        <a class="forks-count" href="#"><%=forks_count%></a>
+                    </div>
+                    
+
+                   
+
+                </div>
+            </script>
+
+        <!-- build:js scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/underscore/underscore.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+
+        <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
